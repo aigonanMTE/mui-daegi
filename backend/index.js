@@ -14,6 +14,11 @@ const moduleSever = process.env.MODULESERVER;
 const getLastLiveFrame = require(
     "./getLastLiveFrame/getLastLiveFrame.js"
 );
+const updateLiveCondition = require("./getLastLiveFrame/updateLiveCondition.js")
+
+updateLiveCondition().catch(error => {
+    console.error("라이브 정보 업데이트 실패:", error);
+});
 
 
 app.use(express.static(staticdir));

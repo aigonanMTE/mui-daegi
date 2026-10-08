@@ -4,61 +4,69 @@ const { promisify } = require("util");
 const execFileAsync = promisify(execFile);
 
 const apikey = process.env.API_KEY;
+const searchIntervalMs = 2000;
+let lastSearchRequestAt = 0;
+let searchQueue = Promise.resolve();
 
 
 async function searchLive(query) {
 
-    const url = new URL(
-        "https://www.googleapis.com/youtube/v3/search"
-    );
+    let releaseQueue;
+    const queuedSearch = new Promise(resolve => {
+        releaseQueue = resolve;
+    });
+    const previousSearch = searchQueue;
+    searchQueue = queuedSearch;
 
-    url.searchParams.set("part", "snippet");
-    url.searchParams.set("q", query);
-    url.searchParams.set("type", "video");
-    url.searchParams.set("eventType", "live");
-    url.searchParams.set("maxResults", "1");
-    url.searchParams.set("key", apikey);
+    await previousSearch;
 
+    try {
+        const waitMs = lastSearchRequestAt + searchIntervalMs - Date.now();
+        if (waitMs > 0) {
+            await new Promise(resolve => setTimeout(resolve, waitMs));
+        }
 
-    const response = await fetch(url);
+        lastSearchRequestAt = Date.now();
 
-    if (!response.ok) {
-
-        console.error(
-            "유튜브 영상 조회중 오류 발생:",
-            response.status
+        const url = new URL(
+            "https://www.googleapis.com/youtube/v3/search"
         );
 
-        return false;
+        url.searchParams.set("part", "snippet");
+        url.searchParams.set("q", query);
+        url.searchParams.set("type", "video");
+        url.searchParams.set("eventType", "live");
+        url.searchParams.set("maxResults", "1");
+        url.searchParams.set("key", apikey);
+
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(
+                `유튜브 영상 조회 중 오류가 발생했습니다: ${response.status}`
+            );
+        }
+
+        const data = await response.json();
+
+        if (data.pageInfo.totalResults === 0) {
+            console.log(
+                query +
+                " 의 방송이 꺼져있거나 방송 제목이 변경 되었습니다"
+            );
+
+            return false;
+        }
+
+        return data.items[0].id.videoId;
+    } finally {
+        releaseQueue();
     }
-
-
-    const data = await response.json();
-
-
-    if (data.pageInfo.totalResults === 0) {
-
-        console.log(
-            query +
-            " 의 방송이 꺼져있거나 방송 제목이 변경 되었습니다"
-        );
-
-        return false;
-    }
-
-
-    return (
-        "https://www.youtube.com/watch?v=" +
-        data.items[0].id.videoId
-    );
 }
 
 
 
-async function getLastLiveFrame(liveName) {
-
-    const liveUrl = await searchLive(liveName);
-
+async function getLastLiveFrame(liveUrl) {
     if (!liveUrl) {
         return false;
     }
@@ -122,3 +130,4 @@ async function getLastLiveFrame(liveName) {
 
 
 module.exports = getLastLiveFrame;
+module.exports.searchLive = searchLive;

@@ -1,0 +1,52 @@
+{
+    "cymusic": {
+        "maimai_8": {
+            "liveName": "[maimai DX] [No.8-H] 싸이뮤직 게임월드(CYGameworld) maimai DX",
+            "liveUrl": "https://www.youtube.com/watch?v=_T7KZ8M9eXY",
+            "liveid": "_T7KZ8M9eXY",
+            "condition": false,
+            "online": false,
+            "modle": "cymusic_maimai"
+        },
+        "maimai_7": {
+            "liveName": "[maimai DX] [No.7-G] 싸이뮤직 게임월드(CYGameworld) maimai DX",
+            "liveUrl": "https://www.youtube.com/watch?v=HOgMPEr49cg",
+            "liveid": "HOgMPEr49cg",
+            "condition": false,
+            "online": true,
+            "modle": "cymusic_maimai"
+        },
+        "maimai_6": {
+            "liveName": "[maimai DX] [No.6-F] 싸이뮤직 게임월드(CYGameworld) maimai DX",
+            "liveUrl": "https://www.youtube.com/watch?v=mX5a20pg1vk",
+            "liveid": "mX5a20pg1vk",
+            "condition": false,
+            "online": true,
+            "modle": "cymusic_maimai"
+        },
+        "maimai_4": {
+            "liveName": "[maimai DX] [No.4-D] 싸이뮤직 게임월드(CYGameworld) maimai DX",
+            "liveUrl": "https://www.youtube.com/watch?v=41-PY6k8nK8",
+            "liveid": "41-PY6k8nK8",
+            "condition": false,
+            "online": true,
+            "modle": "cymusic_maimai"
+        },
+        "maimai_3": {
+            "liveName": "[maimai DX] [No.3-C] 싸이뮤직 게임월드(CYGameworld) maimai DX",
+            "liveUrl": "https://www.youtube.com/watch?v=BOXn6oMpy3Q",
+            "liveid": "BOXn6oMpy3Q",
+            "condition": false,
+            "online": true,
+            "modle": "cymusic_maimai"
+        },
+        "maimai_1": {
+            "liveName": "[maimai DX] [No.1-A] 싸이뮤직 게임월드(CYGameworld) maimai DX",
+            "liveUrl": "https://www.youtube.com/watch?v=UrE4E-yRfhs",
+            "liveid": "UrE4E-yRfhs",
+            "condition": false,
+            "online": true,
+            "modle": "cymusic_maimai"
+        }
+    }
+}
