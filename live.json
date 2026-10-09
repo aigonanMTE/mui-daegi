@@ -6,7 +6,7 @@
             "liveid": "gFxh2mHO45Q",
             "online": true,
             "modle": "cymusic_maimai",
-            "condition": true
+            "condition": false
         },
         "maimai_7": {
             "liveName": "[maimai DX] [No.7-G] 싸이뮤직 게임월드(CYGameworld) maimai DX",
@@ -14,13 +14,13 @@
             "liveid": "8KAVNpGcKr8",
             "online": true,
             "modle": "cymusic_maimai",
-            "condition": false
+            "condition": true
         },
         "maimai_6": {
             "liveName": "[maimai DX] [No.6-F] 싸이뮤직 게임월드(CYGameworld) maimai DX",
             "liveUrl": "https://www.youtube.com/watch?v=fzDckKn-BHI",
             "liveid": "fzDckKn-BHI",
-            "condition": true,
+            "condition": false,
             "online": true,
             "modle": "cymusic_maimai"
         },
@@ -39,13 +39,13 @@
             "condition": false,
             "online": false,
             "modle": "cymusic_maimai",
-            "notFoundCount": 4
+            "notFoundCount": 6
         },
         "maimai_1": {
             "liveName": "[maimai DX] [No.1-A] 싸이뮤직 게임월드(CYGameworld) maimai DX",
             "liveUrl": "https://www.youtube.com/watch?v=b7WlNPUD9Fo",
             "liveid": "b7WlNPUD9Fo",
-            "condition": true,
+            "condition": false,
             "online": true,
             "modle": "cymusic_maimai"
         }

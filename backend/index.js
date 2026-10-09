@@ -16,9 +16,27 @@ const getLastLiveFrame = require(
 );
 const updateLiveCondition = require("./getLastLiveFrame/updateLiveCondition.js")
 
-updateLiveCondition().catch(error => {
-    console.error("라이브 정보 업데이트 실패:", error);
-});
+const liveConditionUpdateIntervalMs = 10 * 60 * 1000;
+let isUpdatingLiveCondition = false;
+
+async function runLiveConditionUpdate() {
+    if (isUpdatingLiveCondition) {
+        console.warn("이전 라이브 정보 업데이트가 진행 중이어서 이번 실행을 건너뜁니다.");
+        return;
+    }
+
+    isUpdatingLiveCondition = true;
+    try {
+        await updateLiveCondition();
+    } catch (error) {
+        console.error("라이브 정보 업데이트 실패:", error);
+    } finally {
+        isUpdatingLiveCondition = false;
+    }
+}
+
+runLiveConditionUpdate();
+setInterval(runLiveConditionUpdate, liveConditionUpdateIntervalMs);
 
 
 app.use(express.static(staticdir));
