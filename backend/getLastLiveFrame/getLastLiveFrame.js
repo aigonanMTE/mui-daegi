@@ -55,7 +55,7 @@ async function searchLive(query) {
                 " 의 방송이 꺼져있거나 방송 제목이 변경 되었습니다"
             );
 
-            return false;
+            return "notFound";
         }
 
         return data.items[0].id.videoId;

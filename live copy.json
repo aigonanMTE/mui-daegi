@@ -4,49 +4,48 @@
             "liveName": "[maimai DX] [No.8-H] 싸이뮤직 게임월드(CYGameworld) maimai DX",
             "liveUrl": "https://www.youtube.com/watch?v=gFxh2mHO45Q",
             "liveid": "gFxh2mHO45Q",
-            "online": true,
-            "modle": "cymusic_maimai",
-            "condition": true
+            "condition": false,
+            "online": false,
+            "modle": "cymusic_maimai"
         },
         "maimai_7": {
             "liveName": "[maimai DX] [No.7-G] 싸이뮤직 게임월드(CYGameworld) maimai DX",
             "liveUrl": "https://www.youtube.com/watch?v=8KAVNpGcKr8",
             "liveid": "8KAVNpGcKr8",
-            "online": true,
-            "modle": "cymusic_maimai",
-            "condition": false
+            "condition": false,
+            "online": false,
+            "modle": "cymusic_maimai"
         },
         "maimai_6": {
             "liveName": "[maimai DX] [No.6-F] 싸이뮤직 게임월드(CYGameworld) maimai DX",
             "liveUrl": "https://www.youtube.com/watch?v=fzDckKn-BHI",
             "liveid": "fzDckKn-BHI",
-            "condition": true,
-            "online": true,
+            "condition": false,
+            "online": false,
             "modle": "cymusic_maimai"
         },
         "maimai_4": {
             "liveName": "[maimai DX] [No.4-D] 싸이뮤직 게임월드(CYGameworld) maimai DX",
             "liveUrl": "https://www.youtube.com/watch?v=6IBorV44lyQ",
             "liveid": "6IBorV44lyQ",
-            "condition": true,
-            "online": true,
+            "condition": false,
+            "online": false,
             "modle": "cymusic_maimai"
         },
         "maimai_3": {
             "liveName": "[maimai DX] [No.3-C] 싸이뮤직 게임월드(CYGameworld) maimai DX",
-            "liveUrl": "notFound",
-            "liveid": "notFound",
+            "liveUrl": "",
+            "liveid": "",
             "condition": false,
             "online": false,
-            "modle": "cymusic_maimai",
-            "notFoundCount": 4
+            "modle": "cymusic_maimai"
         },
         "maimai_1": {
             "liveName": "[maimai DX] [No.1-A] 싸이뮤직 게임월드(CYGameworld) maimai DX",
             "liveUrl": "https://www.youtube.com/watch?v=b7WlNPUD9Fo",
             "liveid": "b7WlNPUD9Fo",
-            "condition": true,
-            "online": true,
+            "condition": false,
+            "online": false,
             "modle": "cymusic_maimai"
         }
     }
